@@ -132,3 +132,44 @@ In a * 1:2 :
 [1] 1 4 3 8
 > 1:4 * c(1, 2, 1, 2)
 [1] 1 4 3 8
+> # B.3.4 Matrices
+> # Matrix is a two dimensional set of elements, all elements are the same type
+> matrix(letters[1:4], ncol=2)
+     [,1] [,2]
+[1,] "a"  "c" 
+[2,] "b"  "d" 
+> M <- matrix(1:4, nrow=2)
+> M
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> # Matricies are filled in by columns, but you can change it to rows
+> M2 <-matrix(1:4, nrow=2, byrow = TRUE)
+> M2
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+> # or make them diagonal
+> I <- diag(1, nrow=2)
+> I
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    1
+> # matrix identity is important, M next to inverse M = I where I is the identity of the matrix
+> Minv <- solve(M)
+> M %*% Minv
+     [,1] [,2]
+[1,]    1    0
+[2,]    0    1
+> # You can extract from matrices as well (Row, Column)
+> M[1,2]
+[1] 3
+> M[1, 1:2]
+[1] 1 3
+> # if you leave the row or column blank, you will get all rows or columns
+> M[, 2]
+[1] 3 4
+> M[, ]
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
