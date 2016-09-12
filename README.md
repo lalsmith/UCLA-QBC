@@ -174,3 +174,30 @@ In a * 1:2 :
      [,1] [,2]
 [1,]    1    3
 [2,]    2    4
+> # B.3.5 Data Frames
+> # data frames are 2D, each column has the same number of rows, but the columns can be different (numeric, integer, charactor, complex, imaginary)
+> dat <- data.frame(species = c("S.altissima", "S.rugosa", "E.graminifolia", "A.pilosus"), treatment = factor(c("Control", "Water", "Control", "Water")), height = c(1.1, 0.8, 0.9, 1), width= c(1, 1.7, 0.6, 0.2))
+> dat
+         species treatment height width
+1    S.altissima   Control    1.1   1.0
+2       S.rugosa     Water    0.8   1.7
+3 E.graminifolia   Control    0.9   0.6
+4      A.pilosus     Water    1.0   0.2
+> # you can extract data from here as well
+> dat[2, ]
+   species treatment height width
+2 S.rugosa     Water    0.8   1.7
+> dat[3, 4]
+[1] 0.6
+> # test elements in the data frame
+> dat [ ,2] == "Water"
+[1] FALSE  TRUE FALSE  TRUE
+> dat[dat[ ,2] == "Water", ]
+    species treatment height width
+2  S.rugosa     Water    0.8   1.7
+4 A.pilosus     Water    1.0   0.2
+> # that one above is saying tell me which parts of the data set are true for the 2nd column being water, the second comma gives you all the columns for the two rows it is TRUE for, the way below is much easier
+> subset(dat, treatment== "Water")
+    species treatment height width
+2  S.rugosa     Water    0.8   1.7
+4 A.pilosus     Water    1.0   0.2
