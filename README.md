@@ -2,6 +2,7 @@
 bootcamp homework
 
 Lauren Smith
+All of my work in R for Primer of Ecology with R, including notes from my script
 
 > # B.2 Assignment
 > # I add two numbers and assign the result to an new object I call a.
