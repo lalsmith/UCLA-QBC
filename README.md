@@ -43,3 +43,72 @@ Lauren Smith
 > rep(1:3, each = 2)
 [1] 1 1 2 2 3 3
 > # repeats each number in sequence two times
+> #B.3.2 Getting information about vectors
+> # Getting information about Y
+> sum(Y)
+[1] 105.4
+> mean(Y)
+[1] 10.54
+> max(Y)
+[1] 11.4
+> length (Y)
+[1] 10
+> summary(Y)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   8.30   10.72   11.00   10.54   11.18   11.40 
+> #Vectors can be called different things
+> Names <- c("Sara", "Yunluan")
+> Names
+[1] "Sara"    "Yunluan"
+> b <- c(TRUE, FALSE)
+> b
+[1]  TRUE FALSE
+> # Vectors can also be dates, numbers, integers and so on. 
+> class(Y)
+[1] "numeric"
+> class(b)
+[1] "logical"
+> # When testing elements of a vector, R will give logical reponses, TRUE or FALSE, you can test using the greater than or less than signs
+> Y > 10
+ [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+> Y>mean(Y)
+ [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+> Y==11
+ [1] FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE FALSE
+> # It is testing for each variable in the vector of Y
+> # to test if something is not equal, use below as example (this works to extract data)
+> Y !=11
+ [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+> #Algebra with vectors
+> # You can add, subtract, multiply and divide vectors, which is operating on the elements in the vectors
+> # example adding vectors a and b
+> a <- 1:3
+> b <- 4:6
+> a+3
+[1] 4 5 6
+> # now mulitply and divide
+> a*b
+[1]  4 10 18
+> a/b
+[1] 0.25 0.40 0.50
+> # to change or operate on a vector
+> a + 1
+[1] 2 3 4
+> a * 2
+[1] 2 4 6
+> 1/a
+[1] 1.0000000 0.5000000 0.3333333
+> # be careful using vectors of different lengths, R may or may not warn you
+> a * 1:2
+[1] 1 4 3
+Warning message:
+In a * 1:2 :
+  longer object length is not a multiple of shorter object length
+> a* c(1,2,1)
+[1] 1 4 3
+> # R will recycle the shorter vector to match the length if you are not issued a warning (I was)
+> # R will not give you an error if you multiply vectors that are a multiple of one another (example: 2 and 4)
+> 1:4 * 1:2
+[1] 1 4 3 8
+> 1:4 * c(1, 2, 1, 2)
+[1] 1 4 3 8
