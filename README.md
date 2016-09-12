@@ -4,6 +4,29 @@ bootcamp homework
 Lauren Smith
 All of my work in R for Primer of Ecology with R, including notes from my script
 
+> #This will calculate the mean of 10 random standard normal variables.
+> mean(rnorm(10))
+[1] -0.1718466
+> # B.1 Help
+> 'help'(mean)
+> help(mean)
+> # two alternate ways to pull up the help page, to reverse, do the following
+> options(htmlhelp = FALSE)
+> # if you don't know exactly the name you sare seraching for in R try
+> help.search("mean")
+> apropos("mean")
+ [1] ".colMeans"     ".rowMeans"     "colMeans"      "kmeans"       
+ [5] "mean"          "mean.Date"     "mean.default"  "mean.difftime"
+ [9] "mean.POSIXct"  "mean.POSIXlt"  "rowMeans"      "weighted.mean"
+> # Packages
+> RSiteSearch("violin")
+A search query has been submitted to http://search.r-project.org
+The results page should open in your browser shortly
+> RSiteSearch("violin", restrict = c("functions"))
+A search query has been submitted to http://search.r-project.org
+The results page should open in your browser shortly
+> # you can combine help functions
+> help(RSiteSearch)
 > # B.2 Assignment
 > # I add two numbers and assign the result to an new object I call a.
 > a <- 2+3
